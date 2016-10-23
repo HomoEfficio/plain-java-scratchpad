@@ -17,12 +17,17 @@ import java.io.IOException;
  */
 public class CellPhoneDeserializer extends JsonDeserializer<CellPhone> {
 
+    private final ObjectMapper objectMapper;
+
+    public CellPhoneDeserializer() {
+        this.objectMapper = new ObjectMapper();
+    }
+
     @Override
     public CellPhone deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
 
         ObjectCodec objectCodec = p.getCodec();
         JsonNode jsonNode = objectCodec.readTree(p);
-        ObjectMapper objectMapper = new ObjectMapper();
 
         final String number = jsonNode.get("number").asText();
         final MobileVendor vendor = objectMapper.convertValue(jsonNode.get("vendor"), MobileVendor.class);
