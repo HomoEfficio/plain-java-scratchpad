@@ -21,16 +21,20 @@ import java.util.Set;
  */
 public class FamilyMemberDeserializer extends JsonDeserializer<FamilyMember> {
 
+    private final ObjectMapper objectMapper;
+
+    public FamilyMemberDeserializer() {
+        this.objectMapper = new ObjectMapper();
+        SimpleModule simpleModule = new SimpleModule();
+        simpleModule.addDeserializer(CellPhone.class, new CellPhoneDeserializer());
+        this.objectMapper.registerModule(simpleModule);
+    }
+
     @Override
     public FamilyMember deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
 
         ObjectCodec objectCodec = p.getCodec();
         JsonNode jsonNode = objectCodec.readTree(p);
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        SimpleModule simpleModule = new SimpleModule();
-        simpleModule.addDeserializer(CellPhone.class, new CellPhoneDeserializer());
-        objectMapper.registerModule(simpleModule);
 
         final Long id = jsonNode.get("id").asLong();
         final String name = jsonNode.get("name").asText();
