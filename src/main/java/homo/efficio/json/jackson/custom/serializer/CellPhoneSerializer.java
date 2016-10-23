@@ -1,10 +1,10 @@
-package homo.efficio.json.jackson.custom.serialization.serializer;
+package homo.efficio.json.jackson.custom.serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import homo.efficio.json.jackson.custom.serialization.domain.CellPhone;
+import homo.efficio.json.jackson.custom.domain.CellPhone;
 
 import java.io.IOException;
 
@@ -18,8 +18,12 @@ public class CellPhoneSerializer extends JsonSerializer<CellPhone> {
 
         gen.writeStartObject();
 
-        gen.writeFieldName("phoneNumber");
+        gen.writeFieldName("phoneNumber");  // 원래 number 인 필드 이름을 phoneNumber로 변경
         gen.writeString(value.getNumber());
+
+        // vendor를 serialize에서 제외
+//        gen.writeFieldName("vendor");
+//        gen.writeObject(value.getVendor());
 
         gen.writeEndObject();
     }
