@@ -9,7 +9,7 @@ import org.apache.commons.lang3.text.translate.EntityArrays;
 import org.apache.commons.lang3.text.translate.LookupTranslator;
 
 /**
- * @author omwomw@sk.com
+ * @author homo.efficio@gmail.com
  *         created on 2016. 11. 15.
  */
 public class HTMLCharacterEscapes extends CharacterEscapes {

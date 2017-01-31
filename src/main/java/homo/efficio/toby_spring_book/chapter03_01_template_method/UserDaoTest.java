@@ -4,7 +4,7 @@ package homo.efficio.toby_spring_book.chapter03_01_template_method;
 import java.sql.SQLException;
 
 /**
- * @author omwomw@sk.com
+ * @author homo.efficio@gmail.com
  *         created on 2017. 1. 29.
  */
 public class UserDaoTest {

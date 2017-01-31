@@ -1,7 +1,7 @@
 package homo.efficio.toby_spring_book.chapter03_02_strategy_pattern;
 
 /**
- * @author omwomw@sk.com
+ * @author homo.efficio@gmail.com
  *         created on 2017. 1. 29.
  */
 public class User {

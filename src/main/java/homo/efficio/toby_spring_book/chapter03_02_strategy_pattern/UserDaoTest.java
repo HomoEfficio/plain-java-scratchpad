@@ -6,7 +6,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.SQLException;
 
 /**
- * @author omwomw@sk.com
+ * @author homo.efficio@gmail.com
  *         created on 2017. 1. 29.
  */
 public class UserDaoTest {

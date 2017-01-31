@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author omwomw@sk.com
+ * @author homo.efficio@gmail.com
  *         created on 2017. 1. 30.
  */
 public class AUserDao extends UserDao {
