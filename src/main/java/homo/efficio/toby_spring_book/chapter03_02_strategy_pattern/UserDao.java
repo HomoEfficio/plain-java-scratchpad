@@ -17,20 +17,34 @@ public class UserDao {
         this.dataSource = dataSource;
     }
 
-    public Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
+    public Connection getConnection() {
+        try {
+            return dataSource.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void update(User user) throws SQLException {
+    public void crud1(User user) {
+
         Connection c = getConnection();
+        PreparedStatement ps = null;
 
-        PreparedStatement ps = c.prepareStatement("update user set password = ? where id = ?");
-        ps.setString(1, user.getPassword());
-        ps.setString(2, user.getId());
+        try {
+            ps = c.prepareStatement("update user set password = ? where id = ?");
+            ps.setString(1, user.getPassword());
+            ps.setString(2, user.getId());
 
-        ps.executeUpdate();
-
-        ps.close();
-        c.close();
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (ps != null) {
+                try { ps.close(); } catch (SQLException e) {}
+            }
+            if (c != null) {
+                try { c.close(); } catch (SQLException e) {}
+            }
+        }
     }
 }

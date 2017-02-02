@@ -1,15 +1,13 @@
 package homo.efficio.toby_spring_book.chapter03_01_template_method;
 
 
-import java.sql.SQLException;
-
 /**
  * @author homo.efficio@gmail.com
  *         created on 2017. 1. 29.
  */
 public class UserDaoTest {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         UserDao userDao = new AUserDao();
 
@@ -18,6 +16,6 @@ public class UserDaoTest {
         user.setPassword("Spring3.1");
         user.setEmail("homo.efficio@gmail.com");
 
-        userDao.update(user);
+        userDao.crud1(user);
     }
 }
