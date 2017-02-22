@@ -1,5 +1,10 @@
 package homo.efficio.java8.lamda.type;
 
+import homo.efficio.java8.lamda.type._type_parameter.LambdaTypeParameter;
+
+import java.io.IOException;
+import java.util.Objects;
+
 /**
  * @author homo.efficio@gmail.com
  *         created on 2016. 11. 16.
@@ -23,5 +28,13 @@ public class Puppet {
     interface FunInterface2 {
 
         boolean isEven(int a);
+    }
+
+    interface ThrowsFunInf {
+        int getHashCode() throws IOException;
+    }
+
+    private void checkMethodReferenceForTypeParameter() {
+//        ThrowsFunInf throwsFunInf = Objects::hashCode;
     }
 }
