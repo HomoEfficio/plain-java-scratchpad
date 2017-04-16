@@ -32,7 +32,7 @@ public class Runner {
         // Object obj = new Integer(3); 은 가능하지만,
         // 아래와 같이 람다식의 인자 파라미터가 명시된 경우
         // 함수 타입의 인자 파라미터와 람다식의 인자 파라미터 타입은 할당 가능이 아니라 일치 해야만 한다.
-        Consumer<Object> consumer1 = (Integer i) -> System.out.println(i);  // 컴파일 에러(Incompatible parameter type)
+//        Consumer<Object> consumer1 = (Integer i) -> System.out.println(i);  // 컴파일 에러(Incompatible parameter type)
 
         // 람다식의 인자 파라미터가 명시되지 않으면 추론에 의해 아래와 같은 람다 사용이 가능하다.
         Consumer<Object> consumer2 = (i) -> System.out.println(i);  // 이건 가능(cf가 Object로 추론됨)
@@ -41,12 +41,12 @@ public class Runner {
         Callable<Object> callable1 = () -> new Integer(1);
 
         // 함수 타입의 반환 타입이 void인 Runnable에 statement expression이 아닌 단순한 값 3은 사용 불가
-        Runnable runnable1 = () -> 3;  // 컴파일 에러(Bad return type)
+//        Runnable runnable1 = () -> 3;  // 컴파일 에러(Bad return type)
 
         // Runnable의 함수 타입의 반환 타입은 void지만, statement expression이 해당하는 인스턴스 생성식은 사용 가능
         Runnable runnable2 = () -> new Integer(3);
 
-        Lister lister = () -> ...어쩌라고... // 람다식은 언어 차원에서 타입 파라미터가 지원되지 않는다.
+//        Lister lister = () -> ...어쩌라고... // 람다식은 언어 차원에서 타입 파라미터가 지원되지 않는다.
 
         // 예외 관련
         // 함수 타입에 throws IOException 이 있으므로
@@ -63,11 +63,11 @@ public class Runner {
             return new Integer(1);
         };
         // 함수 타입의 throws IOException을 상속하지 않은 예외를 던지는 람다는 사용 불가
-        WithThrows withThrows3 = () -> {
-            if (1 == 1)
-                throw new InterruptedException();
-            return new Integer(1);
-        };
+//        WithThrows withThrows3 = () -> {
+//            if (1 == 1)
+//                throw new InterruptedException();
+//            return new Integer(1);
+//        };
         // body에서 Unchecked Exception을 던지는 람다는 함수 타입의 예외 타입과 관계 없이 사용 가능
         WithThrows withThrows4 = () -> {
             if (1 == 1)
@@ -91,14 +91,14 @@ public class Runner {
         Runnable runnable6 = integer2::doubleValue;
 
         // 함수 타입에 타입 파라미터가 있는 경우에도 메서드 레퍼런스 사용 가능
-        interface Lister {
-            <T> List<T> makeList();
-        }
-        Lister lister1 = ArrayList::new;
+//        interface Lister {
+//            <T> List<T> makeList();
+//        }
+//        Lister lister1 = ArrayList::new;
 
         // 함수 타입의 반환 타입이 void가 아니고, 반환 타입이 함수 타입의 반환 타입과 다른 메서드 레퍼런스는 사용 불가
         Integer integer1 = new Integer(1);
-        Callable<Integer> callable2 = integer1::doubleValue;  // 컴파일 에러(Bad return type)
+//        Callable<Integer> callable2 = integer1::doubleValue;  // 컴파일 에러(Bad return type)
         // double도 Object에 할당 가능하므로 아래의 메서드 레퍼런스는 가능
         Callable<Object> callable3 = integer1::doubleValue;
 

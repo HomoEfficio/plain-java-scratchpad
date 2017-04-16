@@ -12,8 +12,8 @@ public class Animal {
         System.out.println("Animal moves");
     }
 
-    public void test() {
-
-        Runnable runnable5 = Objects::hashCode;
-    }
+//    public void test() {
+//
+//        Runnable runnable5 = Objects::hashCode;
+//    }
 }
