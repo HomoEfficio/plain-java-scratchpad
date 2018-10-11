@@ -10,6 +10,8 @@ public class External {
 
     private String name;
 
+    private External external;
+
     public Long getId() {
         return id;
     }
@@ -24,5 +26,13 @@ public class External {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public External getExternal() {
+        return external;
+    }
+
+    public void setExternal(External external) {
+        this.external = external;
     }
 }
