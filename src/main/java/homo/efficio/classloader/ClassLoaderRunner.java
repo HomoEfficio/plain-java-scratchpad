@@ -25,8 +25,8 @@ public class ClassLoaderRunner {
         System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + extensionClassLoader);
 
         // Application ClassLoader 확인
-        final ClassLoader applicationClassLoader = ClassLoaderRunner.class.getClassLoader();
-        System.out.println("Application Classloader - ClassLoader of this class: " + applicationClassLoader);
+        final ClassLoader applicationClassLoader = Internal.class.getClassLoader();
+        System.out.println("Application Classloader - ClassLoader of Internal.class: " + applicationClassLoader);
 
         System.out.println("-----------------------------------");
         System.out.println("ClassLoader Hierarchy\n");
@@ -52,6 +52,9 @@ public class ClassLoaderRunner {
             final Class<?> externalFromUrl = urlClassLoader.loadClass("homo.efficio.classloader.External");
             System.out.println("ClassLoader of External: " + externalFromUrl.getClassLoader());
             System.out.println("ClassLoader of Internal: " + Internal.class.getClassLoader());
+
+            System.out.println("-----------------------------------");
+
         } catch (MalformedURLException e) {
             throw new RuntimeException("URL 형식이 잘못되었습니다.", e);
         } catch (ClassNotFoundException e) {
