@@ -20,20 +20,20 @@ public class ClassLoaderRunner9 {
 
         // Platform ClassLoader 확인
         final ClassLoader platformClassLoader = ClassLoader.getPlatformClassLoader();
-        System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + platformClassLoader);
+        System.out.println("Platform Classloader - ClassLoader.getPlatformClassLoader(): " + platformClassLoader);
 
         // System ClassLoader 확인
-        final ClassLoader systemClassLoader = Internal.class.getClassLoader();
-        System.out.println("System Classloader - ClassLoader of Internal.class: " + systemClassLoader);
+        final ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+        System.out.println("System Classloader - ClassLoader.getSystemClassLoader()    : " + systemClassLoader);
 
         System.out.println("-----------------------------------");
         System.out.println("ClassLoader Hierarchy\n");
 
         System.out.println("BootStrap ClassLoader           : " + bootStrapClassLoader);
-        System.out.println("platformClassLoader.getParent(): " + platformClassLoader.getParent());
+        System.out.println("platformClassLoader.getParent() : " + platformClassLoader.getParent());
 
         System.out.println("Platform ClassLoader             : " + platformClassLoader);
-        System.out.println("systemClassLoader.getParent(): " + systemClassLoader.getParent());
+        System.out.println("systemClassLoader.getParent()    : " + systemClassLoader.getParent());
 
 
         // 외부 폴더에 있는 파일 존재 확인
