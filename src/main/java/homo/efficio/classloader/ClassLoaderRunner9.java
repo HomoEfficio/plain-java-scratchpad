@@ -1,7 +1,5 @@
 package homo.efficio.classloader;
 
-//import com.sun.nio.zipfs.ZipInfo;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,7 +9,7 @@ import java.net.URLClassLoader;
  * @author homo.efficio@gmail.com
  * Created on 2018-10-11.
  */
-public class ClassLoaderRunner {
+public class ClassLoaderRunner9 {
 
     public static void main(String[] args) {
         System.out.println("-----------------------------------");
@@ -20,22 +18,22 @@ public class ClassLoaderRunner {
         final ClassLoader bootStrapClassLoader = String.class.getClassLoader();
         System.out.println("Bootstrap Classloader - ClassLoader of String.class: " + bootStrapClassLoader);
 
-        // Extension ClassLoader 확인
-//        final ClassLoader extensionClassLoader = ZipInfo.class.getClassLoader();
-//        System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + extensionClassLoader);
+        // Platform ClassLoader 확인
+        final ClassLoader platformClassLoader = ClassLoader.getPlatformClassLoader();
+        System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + platformClassLoader);
 
-        // Application ClassLoader 확인
-        final ClassLoader applicationClassLoader = Internal.class.getClassLoader();
-        System.out.println("Application Classloader - ClassLoader of Internal.class: " + applicationClassLoader);
+        // System ClassLoader 확인
+        final ClassLoader systemClassLoader = Internal.class.getClassLoader();
+        System.out.println("System Classloader - ClassLoader of Internal.class: " + systemClassLoader);
 
-//        System.out.println("-----------------------------------");
-//        System.out.println("ClassLoader Hierarchy\n");
-//
-//        System.out.println("BootStrap ClassLoader           : " + bootStrapClassLoader);
-//        System.out.println("extensionClassLoader.getParent(): " + extensionClassLoader.getParent());
-//
-//        System.out.println("Extension ClassLoader             : " + extensionClassLoader);
-//        System.out.println("applicationClassLoader.getParent(): " + applicationClassLoader.getParent());
+        System.out.println("-----------------------------------");
+        System.out.println("ClassLoader Hierarchy\n");
+
+        System.out.println("BootStrap ClassLoader           : " + bootStrapClassLoader);
+        System.out.println("platformClassLoader.getParent(): " + platformClassLoader.getParent());
+
+        System.out.println("Platform ClassLoader             : " + platformClassLoader);
+        System.out.println("systemClassLoader.getParent(): " + systemClassLoader.getParent());
 
 
         // 외부 폴더에 있는 파일 존재 확인
