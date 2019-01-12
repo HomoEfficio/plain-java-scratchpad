@@ -6,9 +6,9 @@ public interface Greeting {
 }
 
 
-// $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l homo/efficio/jvm/sample/Greeting.class
+// $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l -p homo/efficio/jvm/sample/Greeting.class
 // Classfile /C:/gitrepo/scratchpad/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/Greeting.class
-//   Last modified 2019. 1. 12.; size 181 bytes
+//   Last modified 2019. 1. 13.; size 181 bytes
 //   MD5 checksum 8f7ae541e0a64f511d820930f739d4ac
 //   Compiled from "Greeting.java"
 // public interface homo.efficio.jvm.sample.Greeting

@@ -15,7 +15,7 @@ public class KoreanGreeting implements Greeting {
 }
 
 
-// $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l homo/efficio/jvm/sample/KoreanGreeting.class
+// $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l -p homo/efficio/jvm/sample/KoreanGreeting.class
 // Classfile /C:/gitrepo/scratchpad/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/KoreanGreeting.class
 //   Last modified 2019. 1. 12.; size 1132 bytes
 //   MD5 checksum d7ac2a6fd38c67407480720ca730d987
@@ -78,6 +78,10 @@ public class KoreanGreeting implements Greeting {
 //   #48 = Utf8               java/lang/invoke/MethodHandles$Lookup
 //   #49 = Utf8               java/lang/invoke/MethodHandles
 // {
+//   private java.lang.String hello;
+//     descriptor: Ljava/lang/String;
+//     flags: (0x0002) ACC_PRIVATE
+
 //   public homo.efficio.jvm.sample.KoreanGreeting();
 //     descriptor: ()V
 //     flags: (0x0001) ACC_PUBLIC
@@ -112,6 +116,20 @@ public class KoreanGreeting implements Greeting {
 //         Start  Length  Slot  Name   Signature
 //             0      11     0  this   Lhomo/efficio/jvm/sample/KoreanGreeting;
 //             0      11     1  name   Ljava/lang/String;
+
+//   private java.lang.String getHello();
+//     descriptor: ()Ljava/lang/String;
+//     flags: (0x0002) ACC_PRIVATE
+//     Code:
+//       stack=1, locals=1, args_size=1
+//          0: aload_0
+//          1: getfield      #3                  // Field hello:Ljava/lang/String;
+//          4: areturn
+//       LineNumberTable:
+//         line 13: 0
+//       LocalVariableTable:
+//         Start  Length  Slot  Name   Signature
+//             0       5     0  this   Lhomo/efficio/jvm/sample/KoreanGreeting;
 // }
 // SourceFile: "KoreanGreeting.java"
 // InnerClasses:
