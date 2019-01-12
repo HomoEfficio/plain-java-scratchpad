@@ -16,7 +16,7 @@ public class KoreanGreeting implements Greeting {
 
 
 // $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l homo/efficio/jvm/sample/KoreanGreeting.class
-// Classfile /C:/gitRepo/study/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/KoreanGreeting.class
+// Classfile /C:/gitrepo/scratchpad/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/KoreanGreeting.class
 //   Last modified 2019. 1. 12.; size 1132 bytes
 //   MD5 checksum d7ac2a6fd38c67407480720ca730d987
 //   Compiled from "KoreanGreeting.java"
@@ -29,7 +29,7 @@ public class KoreanGreeting implements Greeting {
 //   interfaces: 1, fields: 1, methods: 3, attributes: 3
 // Constant pool:
 //    #1 = Methodref          #7.#25         // java/lang/Object."<init>":()V
-//    #2 = String             #26            // ▒ȳ▒
+//    #2 = String             #26            // ▒?▒
 //    #3 = Fieldref           #6.#27         // homo/efficio/jvm/sample/KoreanGreeting.hello:Ljava/lang/String;
 //    #4 = Methodref          #6.#28         // homo/efficio/jvm/sample/KoreanGreeting.getHello:()Ljava/lang/String;
 //    #5 = InvokeDynamic      #0:#32         // #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -53,7 +53,7 @@ public class KoreanGreeting implements Greeting {
 //   #23 = Utf8               SourceFile
 //   #24 = Utf8               KoreanGreeting.java
 //   #25 = NameAndType        #11:#12        // "<init>":()V
-//   #26 = Utf8               ▒ȳ▒
+//   #26 = Utf8               ▒?▒
 //   #27 = NameAndType        #9:#10         // hello:Ljava/lang/String;
 //   #28 = NameAndType        #21:#22        // getHello:()Ljava/lang/String;
 //   #29 = Utf8               BootstrapMethods
@@ -86,7 +86,7 @@ public class KoreanGreeting implements Greeting {
 //          0: aload_0
 //          1: invokespecial #1                  // Method java/lang/Object."<init>":()V
 //          4: aload_0
-//          5: ldc           #2                  // String ▒ȳ▒
+//          5: ldc           #2                  // String ▒?▒
 //          7: putfield      #3                  // Field hello:Ljava/lang/String;
 //         10: return
 //       LineNumberTable:

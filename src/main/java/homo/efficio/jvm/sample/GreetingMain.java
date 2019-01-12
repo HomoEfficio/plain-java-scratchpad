@@ -23,9 +23,9 @@ public class GreetingMain {
 
 
 // $ /c/Program\ Files/Java/jdk-9.0.1/bin/javap -v -l homo/efficio/jvm/sample/GreetingMain.class
-// Classfile /C:/gitRepo/study/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/GreetingMain.class
+// Classfile /C:/gitrepo/scratchpad/plain-java-scratchpad/out/production/classes/homo/efficio/jvm/sample/GreetingMain.class
 //   Last modified 2019. 1. 12.; size 1861 bytes
-//   MD5 checksum 523cff4c3b095878364ea360911efd11
+//   MD5 checksum f6fe04ebc3b9d9e70d296a37d7a1b60f
 //   Compiled from "GreetingMain.java"
 // public class homo.efficio.jvm.sample.GreetingMain
 //   minor version: 0
@@ -171,7 +171,7 @@ public class GreetingMain {
 //         47: astore_3
 //         48: aload_3
 //         49: aload_0
-//         50: iconst_1
+//         50: iconst_0
 //         51: aaload
 //         52: invokevirtual #11                 // Method java/lang/ClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
 //         55: astore        4
@@ -222,6 +222,6 @@ public class GreetingMain {
 //           locals = [ class "[Ljava/lang/String;", class homo/efficio/jvm/sample/KoreanGreeting, class homo/efficio/jvm/sample/Greeting, class java/lang/ClassLoader, class java/lang/Class ]
 //           stack = []
 //     Exceptions:
-//       throws java.lang.ClassNotFoundException, java.lang.NoSuchMethodException,java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException, java.lang.InstantiationException
+//       throws java.lang.ClassNotFoundException, java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException, java.lang.InstantiationException
 // }
 // SourceFile: "GreetingMain.java"
