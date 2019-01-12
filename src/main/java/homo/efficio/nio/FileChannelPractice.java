@@ -22,13 +22,20 @@ public class FileChannelPractice {
         StringBuilder sb = new StringBuilder();
         System.out.println(Paths.get(".").toAbsolutePath().normalize().toString());
         try (
-                FileChannel readChannel = FileChannel.open(Paths.get("src/main/resources/springcamp.txt"), StandardOpenOption.READ)
+                FileChannel fileChannel = FileChannel.open(
+                        // Paths.get() 은 아래와 같이 다수의 문자열 사용 가능
+//                        Paths.get("src/main/resources/springcamp.txt"),
+                        Paths.get("src/main/resources", "springcamp.txt"),
+//                        Paths.get("src/main", "resources", "springcamp.txt"),
+                                StandardOpenOption.READ  // 복수개의 OpenOption 조합 가능,
+                        )  // READ + APPEND 는
+                        // Exception in thread "main" java.lang.IllegalArgumentException: READ + APPEND not allowed 발생
         ) {
 
             Charset charset = Charset.forName("UTF-8");
             ByteBuffer buf = ByteBuffer.allocate(8 * 1024);
 
-            while (readChannel.read(buf) != -1) {
+            while (fileChannel.read(buf) != -1) {
                 buf.flip();
                 sb.append(charset.decode(buf).toString());
                 buf.clear();
