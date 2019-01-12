@@ -1,4 +1,6 @@
-package homo.efficio.classloader;
+package homo.efficio.classloader.external;
+
+import homo.efficio.classloader.internal.Internal;
 
 /**
  * @author homo.efficio@gmail.com
@@ -10,7 +12,7 @@ public class External {
 
     private String name;
 
-    private External external;
+    private Internal internal;
 
     public Long getId() {
         return id;
@@ -28,11 +30,11 @@ public class External {
         this.name = name;
     }
 
-    public External getExternal() {
-        return external;
+    public Internal getInternal() {
+        return internal;
     }
 
-    public void setExternal(External external) {
-        this.external = external;
+    public void setInternal(Internal internal) {
+        this.internal = internal;
     }
 }

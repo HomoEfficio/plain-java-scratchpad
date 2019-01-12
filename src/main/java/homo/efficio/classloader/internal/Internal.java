@@ -1,4 +1,4 @@
-package homo.efficio.classloader;
+package homo.efficio.classloader.internal;
 
 import java.util.UUID;
 
