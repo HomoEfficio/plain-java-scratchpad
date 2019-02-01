@@ -1,5 +1,7 @@
 package homo.efficio.classloader;
 
+import homo.efficio.classloader.internal.Internal;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
