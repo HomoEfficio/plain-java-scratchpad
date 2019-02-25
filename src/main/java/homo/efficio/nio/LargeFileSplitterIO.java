@@ -93,8 +93,8 @@ public class LargeFileSplitterIO {
 
             byte b;
             int writeBytes = 0;
-            for (int i = 1; newLinePosition > 0;) {
-                b = buffer.get(newLinePosition -= i);  // 1 byte 씩 뒤로 가면서 줄바꿈 탐색
+            while (newLinePosition > 0) {
+                b = buffer.get(--newLinePosition);  // 1 byte 씩 뒤로 가면서 줄바꿈 탐색
                 if (b == NEWLINE_BYTES[0]) {  // System.lineSeparator() == 0x0A 인 시스템(리눅스)
 //                if (b == NEWLINE_BYTES[1]) {
                     buffer.limit(++newLinePosition);
