@@ -53,6 +53,13 @@ public class LargeFileSplitterIO {
         final FileChannel srcFileChannel = FileChannel.open(path, StandardOpenOption.READ);
         final byte[] NEWLINE_BYTES = {0x0A, 0x0D};
 
+        System.out.println("--------------");
+        byte[] bytes = System.lineSeparator().getBytes("UTF-8");
+        for (int i = 0, len = bytes.length ; i < len ; i++) {
+            System.out.print(bytes[i]);
+        }
+        System.out.println("\n--------------");
+        
         int fileCounter = 0;
         int totalReadBytes = 0;
         int totalWriteBytes = 0;
