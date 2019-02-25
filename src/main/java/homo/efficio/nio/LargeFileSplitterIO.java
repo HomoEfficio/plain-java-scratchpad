@@ -124,6 +124,24 @@ public class LargeFileSplitterIO {
         System.out.println("Total Read  Bytes: " + totalReadBytes);
         System.out.println("Total Write Bytes: " + totalWriteBytes);
     }
+    
+    private static LineSeprarator getSystemLineSeparator() {
+        byte[] bytes = System.lineSeparator().getBytes(StandardCharsets.UTF_8);
+        if (bytes.length == 2 && bytes[0] == 0x0D && bytes[1] == 0x0A) {
+            return LineSeprarator.CRLF;
+        } else if (bytes[0] == 0x0A) {
+            return LineSeprarator.LF;
+        } else if (bytes[0] == 0x0D) {
+            return LineSeprarator.CR;
+        } else {
+            throw new RuntimeException("알 수 없는 행 구분자" + bytes[0]);
+        }
+    }
+
+
+    public enum LineSeprarator {
+        LF, CRLF, CR
+    }
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
