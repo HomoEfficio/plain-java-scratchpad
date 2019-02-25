@@ -1,6 +1,6 @@
 package homo.efficio.classloader;
 
-import com.sun.nio.zipfs.ZipInfo;
+//import com.sun.nio.zipfs.ZipInfo;
 import homo.efficio.classloader.internal.Internal;
 
 import java.io.File;
@@ -13,7 +13,7 @@ import java.net.URLClassLoader;
  * @author homo.efficio@gmail.com
  * Created on 2018-10-11.
  */
-public class ClassLoaderRunner {
+public class ClassLoaderRunner8 {
 
     public static void main(String[] args) throws IOException {
         System.out.println("-----------------------------------");
@@ -23,8 +23,8 @@ public class ClassLoaderRunner {
         System.out.println("Bootstrap Classloader - ClassLoader of String.class: " + bootStrapClassLoader);
 
         // Extension ClassLoader 확인
-        final ClassLoader extensionClassLoader = ZipInfo.class.getClassLoader();
-        System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + extensionClassLoader);
+//        final ClassLoader extensionClassLoader = ZipInfo.class.getClassLoader();
+//        System.out.println("Extension Classloader - ClassLoader of ZipInfo.class: " + extensionClassLoader);
 
         // Application ClassLoader 확인
         final ClassLoader applicationClassLoader = Internal.class.getClassLoader();
@@ -34,9 +34,9 @@ public class ClassLoaderRunner {
         System.out.println("ClassLoader Hierarchy\n");
 
         System.out.println("BootStrap ClassLoader           : " + bootStrapClassLoader);
-        System.out.println("extensionClassLoader.getParent(): " + extensionClassLoader.getParent());
+//        System.out.println("extensionClassLoader.getParent(): " + extensionClassLoader.getParent());
 
-        System.out.println("Extension ClassLoader             : " + extensionClassLoader);
+//        System.out.println("Extension ClassLoader             : " + extensionClassLoader);
         System.out.println("applicationClassLoader.getParent(): " + applicationClassLoader.getParent());
 
 
